@@ -16,7 +16,7 @@
                 <p>You will need a few inputs to make this work properly.  You can delete this comment once you feel you know how many variables you need.</p>
                 <div class="options">
                     <label>Price</label>
-                    <input type="" name="" value=""></input>
+                    <input id="price" type="" name="" value=""></input>
                 </div>
                 <div class="options">
                     <label>Shipping</label><br><br>
@@ -36,24 +36,25 @@
         </section>
     </body>
     <script type="text/javascript">
-        
+
         function calculate(){
-            
+        const doc = document
+
         //Query select your information
-        let price;
-        let shippingType;
+        let price = doc.querySelector('#price');
+        let shippingType = ;
         let shippingLocation;
-        
-        //conditionally choose the shipping tax    
+
+        //conditionally choose the shipping tax
         let shippingTax;
         let tax10000 = ['Peoria','Arlington Heights','Schaumburg','Evanston','Palatine'];
-        
+
         if(tax10000.includes(shippingLocation)){
             //think about it
         }
-            
-            
-            
+
+
+
         }
     </script>
 </html>
