@@ -42,17 +42,24 @@
 
         //Query select your information
         let price = doc.querySelector('#price');
-        let shippingType = ;
-        let shippingLocation;
+        let shippingType = doc.querySelectorAll('#standard', '#priority', '#express');
+        let shippingLocation = doc.querySelector('#shippingTax');
 
         //conditionally choose the shipping tax
         let shippingTax;
         let tax10000 = ['Peoria','Arlington Heights','Schaumburg','Evanston','Palatine'];
+        let tax8750 = ['joliet','bloomington'];
+        let tax9000 = ['champaign']
+        let tax8250 = ['aurora', 'Waukegan']
+        let tax8500 = ['springfield', 'Bolingbrook']
+        let tax10250 = ['chicago']
 
         if(tax10000.includes(shippingLocation)){
-            //think about it
+            shippingTax = 1.1;
         }
-
+        if(tax10000.includes(shippingLocation)){
+            shippingTax = 1.1;
+        }
 
 
         }
