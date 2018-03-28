@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="your name">
+        <link type="text/css" rel="stylesheet" href="taxstyles.css">
+        <title>Sales tax</title>
+    </head>
+    <body>
+        <section id="widget">
+            <header>
+                <h1>Illinois Sales Tax Calculator</h1>
+                <h4>price of goods and services changes based on the city or county purchased.</h4>
+            </header>
+            <div id="user-input">
+                <p>You will need a few inputs to make this work properly.  You can delete this comment once you feel you know how many variables you need.</p>
+                <div class="options">
+                    <label>Price</label>
+                    <input id="price"type="" name="" value=""></input>
+                </div>
+                <div class="options">
+                    <label>Shipping</label><br><br>
+                    <select id="shipping" name="shipping">
+                        <option value="standard">standard</option>
+                        <option value="priority">priority</option>
+                        <option value="express">express</option>
+                    </select>
+
+
+                </div>
+                <div class="options">
+                    <label>City</label>
+                    <input id="city" type="" name="" value="">
+                </div>
+                <button onclick="calculate()">Calculate</button>
+            </div>
+            <footer>
+                <span id="answer"></span>
+            </footer>
+        </section>
+    </body>
+    <script type="text/javascript">
+
+        function calculate(){
+        let doc= document;
+        //Query select your information
+        let price = doc.querySelector('#price').value;
+        let shippingType = doc.querySelector('#shipping').value
+        let shippingLocation = doc.querySelector('#city').value;
+
+
+        //set shipping type cost
+        if(shippingType == 'standard'){
+            shippingType = 2.99
+        }
+        if(shippingType == 'priority'){
+            shippingType = 3.99
+        }
+        if(shippingType == 'express'){
+            shippingType = 4.99
+        }
+
+
+
+
+
+        //conditionally choose the shipping tax
+        let shippingTax;
+        let tax10000 = ['Peoria','Arlington Heights','Schaumburg','Evanston','Palatine'];
+        let tax10250 = ['Chicago','Elgin','Skokie'];
+        let tax8250 = ['Rockford','Aurora','Waukegan'];
+        let tax8750 = ['Joliet','Bloomington'];
+        let tax8500 = ['Springfield','Bolingbrook'];
+        let tax9250 = ['Decatur'];
+        let tax9750 = ['Orland Park'];
+        let tax10750 = ['Cicero'];
+        let tax9000 = ['Champaign'];
+        let tax7500 = ['Naperville'];
+        ]
+
+        if(tax10000.includes(shippingLocation)){
+             shippingTax = 1.10;
+            //think about it
+        }
+        else if(tax1025.includes(shippingLocation)){
+             shippingTax = 1.025;
+       }
+       else if(tax8250.includes(shippingLocation)){
+             shippingTax = 1.0825;
+       }
+       else if(tax8750.includes(shippingLocation)){
+             shippingTax = 1.0875;
+       }
+       else if(tax8500.includes(shippingLocation)){
+             shippingTax =  1.0850;
+       }
+       else if(tax9250.incudes(shippingLocation)){
+             shippingTax = 1.0925;
+       }
+       else if(tax9750.includes(shippingLocation)){
+             shippingTax = 1.0975;
+       }
+       else if(tax10750.includes(shippingLocation)){
+             shippingTax = 1.0750;
+       }
+       else if(tax9000.includes(shippingLocation)){
+             shippingTax = 1.09;
+      }
+       else if(tax7500.includes(shippingLocation)){
+             shippingTax = 1.0750
+       }
+
+       let total;
+
+       //query select anseer
+       doc.querySelector('#answer')
+       //put in total with inner html
+       let answer = 'price'+'shippingtype'*'city'*1.0625
+ }
+    </script>
+</html>
